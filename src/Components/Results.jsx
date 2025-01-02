@@ -1,6 +1,6 @@
 const Results = () => {
     return (
-        <h2>8.1</h2>
+        <h2>Tabela</h2>
     )
 }
 
