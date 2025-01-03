@@ -1,23 +1,19 @@
 import { useEffect, useState } from "react";
 
 const Form = () => {
-    let [altura, setAltura] = useState(180);
-    let [massa, setMassa] = useState(60);
+    let [altura, setAltura] = useState(0);
+    let [massa, setMassa] = useState(0);
     let [imc, setImc] = useState(0);
 
     useEffect(() => {
-        // console.log({altura})
         calculaImc();
-    },[altura])
-
-    useEffect(() => {
-        // console.log({massa})
-        calculaImc();
-    },[massa])
+    },[massa, altura])
 
     const calculaImc = () => {
         let aluraEmMetros = altura / 100;
+        
         setImc((massa / (aluraEmMetros * aluraEmMetros)).toFixed(2));
+
     }
 
     return (
@@ -29,7 +25,7 @@ const Form = () => {
             <label htmlFor="massa">Massa</label>
             <input type="number" id="massa" placeholder="60 kg" onChange={({target}) => setMassa(parseInt(target.value))}/>
         </form>
-        <h2>{imc}</h2>
+        <h2 className="imc">{imc}</h2>
         </>
     )
 }

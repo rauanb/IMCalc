@@ -1,7 +1,7 @@
 const Tabela = () => {
     return (
         <>
-        <h2>Tabela</h2>
+        {/* <h3>Tabela</h3> */}
         <table>
             <thead>
                 <tr>

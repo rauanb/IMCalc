@@ -5,32 +5,65 @@
   font-family: sans-serif;
   text-align: center;
 
+  /* Variáveis */
   --alturaForm: 50vh;
+  --larguraForm: 55vh;
+  --corFundo: #dcdde1;
+  --corContainer: #f5f6fa;
+  --corBordaContainer: #192a56;
+  --corBordaImc: #273c75;
+  --corLinhaImpar: #7f8fa6;
+  --corLinhaPar: #718093;
 }
 
 body {
-  background-color: blue;
+  background-color: var(--corFundo);
 }
 
-html {
-  background-color: green;
+h1 {
+  color: var(--corBordaContainer);
 }
 
 .container {
-  background-color: red;
-  width: var(--alturaForm);
+  background-color: var(--corContainer);
+  width: var(--larguraForm);
   margin: calc((100vh - var(--alturaForm))/2) auto;
   padding: 8px;
-  height: var(--alturaForm);
   display: flex;
   align-items: center;
   flex-direction: column;
   border-radius: 16px;
-  border: 2px solid black;
+  border: 6px solid var(--corBordaContainer);
 }
 
+/* Formulário */
 .form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+
+/* IMC */
+.imc {
+  margin: 8px;
+  padding: 4px;
+  border: solid 3px var(--corBordaImc);
+  border-radius: 4px;
+  color: var(--corBordaContainer);
+}
+
+/* Tabela */
+tbody tr th {
+  text-align: left;
+  margin-left: 4px;
+  padding: 4px 10px 4px 10px;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: var(--corLinhaImpar);
+}
+
+tbody tr:nth-child(even) {
+  background-color: var(--corLinhaPar);
+}
+
