@@ -27,7 +27,7 @@ h1 {
 .container {
   background-color: var(--corContainer);
   width: var(--larguraForm);
-  margin: calc((100vh - var(--alturaForm))/2) auto;
+  margin: calc((91vh - var(--alturaForm))/2) auto;
   padding: 8px;
   display: flex;
   align-items: center;
@@ -67,3 +67,14 @@ tbody tr:nth-child(even) {
   background-color: var(--corLinhaPar);
 }
 
+/* Footer */
+.footer {
+  text-align: center;
+  font-weight: bold;
+  padding: 16px;
+  background-color: var(--corBordaImc);
+
+  a {
+      color: #000;
+  }
+}
