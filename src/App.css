@@ -73,6 +73,8 @@ tbody tr:nth-child(even) {
   font-weight: bold;
   padding: 16px;
   background-color: var(--corBordaImc);
+  /* position: fixed; */
+  bottom: 0;
 
   a {
       color: #000;
