@@ -32,9 +32,6 @@ const Tabela = () => {
                 </tr>
             </tbody>
         </table>
-        <tbody>
-            <tr></tr>
-        </tbody>
         </>
     )
 }
