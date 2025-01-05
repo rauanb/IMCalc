@@ -11,19 +11,19 @@ const Tabela = () => {
             </thead>
             <tbody>
                 <tr>
-                    <th>Menor que 18.5</th>
+                    <th>Menor que 18.50</th>
                     <th>Magreza</th>
                 </tr>
                 <tr>
-                    <th>Entre 18.5 e 24.9</th>
+                    <th>Entre 18.5 e 24.99</th>
                     <th>Normal</th>
                 </tr>
                 <tr>
-                    <th>Entre 25e 29.9</th>
+                    <th>Entre 25 e 29.99</th>
                     <th>Sobrepeso</th>
                 </tr>
                 <tr>
-                    <th>Entre 30 e 39.9</th>
+                    <th>Entre 30 e 39.99</th>
                     <th>Obesidade</th>
                 </tr>
                 <tr>

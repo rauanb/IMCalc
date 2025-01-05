@@ -5,6 +5,7 @@ const Form = () => {
     let [massa, setMassa] = useState(0);
     let [imc, setImc] = useState(0);
     let [categoria, setCategoria] = useState('Seu IMC');
+    let imcAtualizado = 0;
 
     useEffect(() => {
         calculaImc();
@@ -14,41 +15,34 @@ const Form = () => {
         let aluraEmMetros = altura / 100;
         
         if (massa != 0 && altura != 0){
-            setImc((massa / (aluraEmMetros * aluraEmMetros)).toFixed(2));
+            imcAtualizado = (massa / (aluraEmMetros * aluraEmMetros));
+            setImc(imcAtualizado.toFixed(2));
+            // console.log(`Atualizou imc para ${imcAtualizado}`)
             // console.log('Altura ou massa diferente de zero')
         } else {
             setImc('');
             setCategoria('Seu IMC');
-            // console.log("Altura ou massa igual a 0")
         }
 
-        // Atualizar os cases
         switch (true) {
-            case (imc < 1):
+            case (imcAtualizado < 1):
                 setCategoria('Seu IMC');
                 break;
-            case (imc < 18.5):
+            case (imcAtualizado <= 18.59):
                 setCategoria(` - Magreza`);
-                // setCategoria(`${imc} - Magreza`);
                 break;
-            case (imc < 24.9):
+            case (imcAtualizado <= 24.99):
                 setCategoria(` - Normal`);
-                // setCategoria(`${imc} - Normal`);
                 break;
-            case (imc < 29.9):
+            case (imcAtualizado <= 29.99):
                 setCategoria(` - Sobrepeso`);
-                // setCategoria(`${imc}  - Sobrepeso`);
                 break;
-            case (imc < 39.9):
+            case (imcAtualizado <= 39.99):
                 setCategoria(` - Obesidade`);
-                // setCategoria(`${imc}  - Obesidade`);
                 break;
             default:
                 setCategoria(` - Obesidade Grave`);
-                // setCategoria(`${imc}  - Obesidade Grave`);
         }
-        // setImc((massa / (aluraEmMetros * aluraEmMetros)).toFixed(2));
-        console.log({imc})
     }
 
     return (
@@ -61,8 +55,6 @@ const Form = () => {
             <input type="number" id="massa" placeholder="60 kg" onChange={({target}) => setMassa(parseInt(target.value))}/>
         </form>
         <h2 className="imc">{imc}{categoria}</h2>
-        {/* <h2 className="imc">{categoria}</h2> */}
-        {/* {calculaImc()} */}
         </>
     )
 }
