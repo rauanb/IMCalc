@@ -28,7 +28,7 @@ const Form = () => {
             case (imcAtualizado < 1):
                 setCategoria('Seu IMC');
                 break;
-            case (imcAtualizado <= 18.59):
+            case (imcAtualizado < 18.50):
                 setCategoria(` - Magreza`);
                 break;
             case (imcAtualizado <= 24.99):
